@@ -24,6 +24,6 @@
   <strong>User:</strong>
   <%= @book.user %>
 </p>
-
+<p><%=rating_for @book,'rating',disable_after_rate:false%></p>
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
