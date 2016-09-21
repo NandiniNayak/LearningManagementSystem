@@ -1,11 +1,20 @@
-<%= simple_form_for(@book) do |f| %>
-  <%= f.error_notification %>
+<%= form_for(book) do |f| %>
 
-  <div class="form-inputs">
-    <%= f.input :author %>
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :book_category %>
+
+  <div class="field">
+    <%= f.label :author%>
+    <%= f.text_field :author %>
+    <%= f.label :title%>
+    <%= f.text_field :title %>
+    <%= f.label :description%>
+    <%= f.text_area :description %>
+    <%= f.label :book_category%>
+    <%= f.text_field :book_category %>
+    <%= f.label :tags%>
+    <%= f.text_field :tag_list %>
+    <%= f.label :image%>
+    <%= f.file_field :image%>
+    <%=rating_for book,'rating',disable_after_rate:false%>
   </div>
 
   <div class="form-actions">

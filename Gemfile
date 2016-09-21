@@ -7,6 +7,11 @@ gem 'simple_form'
 #Using bootstrap to the webpage
 gem 'bootstrap-sass'
 gem 'ratyrate'
+gem 'carrierwave'
+gem 'cloudinary'
+
+
+gem 'acts-as-taggable-on'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 # Use sqlite3 as the database for Active Record

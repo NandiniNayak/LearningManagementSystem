@@ -22,8 +22,15 @@
 
 <p>
   <strong>User:</strong>
-  <%= @book.user %>
+  <%= @book.user.email%>
 </p>
 <p><%=rating_for @book,'rating',disable_after_rate:false%></p>
+<p><%=image_tag(@book.image_url)%></p>
+<!-- <%=@book.tags%> -->
+<p><%=@book.tags.any?%>
+  <%@book.tags.each do |tag|%>
+  <%=link_to tag.name,tagged_url(:tag=>tag.name)%>
+<%end%>
+</p>
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
