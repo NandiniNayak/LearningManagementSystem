@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<p><%=image_tag(@book.image_url)%></p>
 <p>
   <strong>Author:</strong>
   <%= @book.author %>
@@ -25,12 +26,20 @@
   <%= @book.user.email%>
 </p>
 <p><%=rating_for @book,'rating',disable_after_rate:false%></p>
-<p><%=image_tag(@book.image_url)%></p>
-<!-- <%=@book.tags%> -->
+
+<%= form_for [@book, Comment.new] do |f| %>
+  <p>
+    <%= f.label :body, "New comment" %><br/>
+    <%= f.text_area :body %>
+  </p>
+  <p><%= f.submit "Add comment" %></p>
+<%end%>
+<%=@comments %>
+
 <p><%=@book.tags.any?%>
   <%@book.tags.each do |tag|%>
   <%=link_to tag.name,tagged_url(:tag=>tag.name)%>
-<%end%>
 </p>
-<%= link_to 'Edit', edit_book_path(@book) %> |
+<%end%>
+<%= link_to 'Edit', edit_book_path(@book) %>
 <%= link_to 'Back', books_path %>

@@ -9,6 +9,7 @@ gem 'bootstrap-sass'
 gem 'ratyrate'
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'record_tag_helper', '~> 1.0'
 
 
 gem 'acts-as-taggable-on'
